@@ -1,38 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 <head>
+  <meta charset="UTF-8" />
   <title>OneShop</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
       text-align: center;
-      background-color: #f5f5f5;
       margin: 20px;
+      color: #333;
     }
     h1 {
-      color: #2c3e50;
+      color: #2a2a72;
     }
     p {
-      font-size: 18px;
-      color: #555;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
     .product {
-      display: inline-block;
-      margin: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
       background: white;
-      padding: 10px;
-      width: 200px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .product:hover {
+      transform: scale(1.05);
     }
     .product img {
       max-width: 100%;
-      border-radius: 5px;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 12px;
     }
     .product-name {
       font-weight: bold;
-      margin-top: 10px;
+      font-size: 18px;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -41,19 +55,33 @@
   <h1>Welcome to OneShop</h1>
   <p>Everything you need</p>
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=200&q=80" alt="Hörlurar">
-    <div class="product-name">Hörlurar</div>
-  </div>
+  <div class="products">
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd3b?auto=format&fit=crop&w=200&q=80" alt="Fotbollströja">
-    <div class="product-name">Fotbollströja</div>
-  </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1512446733611-9099a758e1a2?auto=format&fit=crop&w=400&q=80" alt="Hörlurar på huvud" />
+      <div class="product-name">Hörlurar (på huvud)</div>
+    </div>
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1520975693122-820f302448af?auto=format&fit=crop&w=200&q=80" alt="Kläder">
-    <div class="product-name">Kläder</div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1600185367414-fd22c103b967?auto=format&fit=crop&w=400&q=80" alt="Fotbollströja" />
+      <div class="product-name">Fotbollströja</div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1530845647259-6ec91db49946?auto=format&fit=crop&w=400&q=80" alt="Byxor" />
+      <div class="product-name">Byxor</div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="T-shirt" />
+      <div class="product-name">T-shirt</div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80" alt="Tröja" />
+      <div class="product-name">Tröja</div>
+    </div>
+
   </div>
 
 </body>
