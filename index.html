@@ -1,93 +1,227 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <title>OneShop</title>
+  <title>OneShop - Allt du behöver</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
-      margin: 30px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
       color: #333;
     }
-    h1 {
-      color: #2a2a72;
-      margin-bottom: 10px;
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    p {
-      font-size: 22px;
-      margin-bottom: 40px;
-      color: #555;
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
     }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 50px;
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: 300;
     }
-    .product {
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    section h2 {
+      font-size: 2rem;
+      border-bottom: 3px solid #0078d7;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      color: #004a9f;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+      gap: 25px;
+    }
+    .product-card {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 320px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .product:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
     }
-    .product img {
+    .product-image {
       width: 100%;
-      height: 220px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    .product-info {
+      padding: 15px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .product-name {
-      font-weight: bold;
-      font-size: 20px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: #0078d7;
+    }
+    .product-desc {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+    .product-price {
+      font-weight: 700;
       color: #222;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #0078d7;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to OneShop</h1>
-  <p>Everything you need</p>
+  <header>
+    <h1>OneShop</h1>
+    <p>Allt du behöver - Elektronik, Kläder, Sport och mycket mer!</p>
+  </header>
 
-  <div class="products">
+  <main>
 
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1598514982695-7c95183a56b7?auto=format&fit=crop&w=800&q=80" alt="Hörlurar på huvud" />
-      <div class="product-name">Hörlurar på huvud</div>
-    </div>
+    <!-- Elektronik -->
+    <section>
+      <h2>Elektronik</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1512446733611-9099a758e1a2?auto=format&fit=crop&w=600&q=80" alt="Trådlösa hörlurar" />
+          <div class="product-info">
+            <h3 class="product-name">Trådlösa Hörlurar</h3>
+            <p class="product-desc">Högkvalitativa trådlösa hörlurar med brusreducering och lång batteritid.</p>
+            <div class="product-price">799 kr</div>
+          </div>
+        </div>
 
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1599010662251-21a20f9f46d6?auto=format&fit=crop&w=800&q=80" alt="Fotbollströja" />
-      <div class="product-name">Fotbollströja</div>
-    </div>
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80" alt="Smartphone" />
+          <div class="product-info">
+            <h3 class="product-name">Smartphone</h3>
+            <p class="product-desc">Nyaste modellen med stor skärm, snabb processor och fantastiska kameror.</p>
+            <div class="product-price">5 499 kr</div>
+          </div>
+        </div>
 
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1520975693122-820f302448af?auto=format&fit=crop&w=800&q=80" alt="Byxor" />
-      <div class="product-name">Byxor</div>
-    </div>
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1580910051072-20ebcbdd46b8?auto=format&fit=crop&w=600&q=80" alt="Smartklocka" />
+          <div class="product-info">
+            <h3 class="product-name">Smartklocka</h3>
+            <p class="product-desc">Följ din hälsa och håll koll på notiser direkt på handleden.</p>
+            <div class="product-price">1 499 kr</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="T-shirt" />
-      <div class="product-name">T-shirt</div>
-    </div>
+    <!-- Kläder -->
+    <section>
+      <h2>Kläder</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1520975693122-820f302448af?auto=format&fit=crop&w=600&q=80" alt="Jeans" />
+          <div class="product-info">
+            <h3 class="product-name">Jeans</h3>
+            <p class="product-desc">Bekväma och slitstarka jeans i modern passform.</p>
+            <div class="product-price">499 kr</div>
+          </div>
+        </div>
 
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=800&q=80" alt="Tröja" />
-      <div class="product-name">Tröja</div>
-    </div>
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Vit t-shirt" />
+          <div class="product-info">
+            <h3 class="product-name">Vit T-shirt</h3>
+            <p class="product-desc">Klassisk t-shirt i mjukt material, perfekt för vardagen.</p>
+            <div class="product-price">199 kr</div>
+          </div>
+        </div>
 
-  </div>
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80" alt="Tröja" />
+          <div class="product-info">
+            <h3 class="product-name">Tröja</h3>
+            <p class="product-desc">Mjuk och varm tröja i ekologisk bomull.</p>
+            <div class="product-price">399 kr</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sport -->
+    <section>
+      <h2>Sport</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1600185367414-fd22c103b967?auto=format&fit=crop&w=600&q=80" alt="Fotbollströja" />
+          <div class="product-info">
+            <h3 class="product-name">Fotbollströja</h3>
+            <p class="product-desc">Lätt och luftig tröja för maximal rörelsefrihet på planen.</p>
+            <div class="product-price">349 kr</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1521334884689-9a7658c9e180?auto=format&fit=crop&w=600&q=80" alt="Löparskor" />
+          <div class="product-info">
+            <h3 class="product-name">Löparskor</h3>
+            <p class="product-desc">Bekväma och stötdämpande skor för alla typer av löpning.</p>
+            <div class="product-price">899 kr</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img class="product-image" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80" alt="Sportväska" />
+          <div class="product-info">
+            <h3 class="product-name">Sportväska</h3>
+            <p class="product-desc">Rymlig väska med flera fack, perfekt för gymmet.</p>
+            <div class="product-price">299 kr</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 OneShop. Alla rättigheter förbehållna.
+  </footer>
 
 </body>
 </html>
+
